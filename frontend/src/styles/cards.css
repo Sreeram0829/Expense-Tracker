@@ -1,0 +1,31 @@
+/* ========================
+   cards.css – UPDATED
+   ======================== */
+
+.card {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: 12px; /* slightly increased for a softer feel */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06); /* more natural elevation */
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08); /* subtle hover effect */
+}
+
+.card-header {
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--text-color);
+}

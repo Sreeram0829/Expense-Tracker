@@ -1,0 +1,134 @@
+/* =========================
+   themes.css  – UPDATED
+   ========================= */
+
+:root {
+  /* Light Mode Defaults */
+  --bg-color: #ffffff;
+  --text-color: #333333;
+
+  /* softened card + border */
+  --card-bg: #f9fafb;          /* was #ffffff */
+  --border-color: #d1d5db;     /* was #e0e0e0 */
+
+  --primary-color: #4361ee;
+  --secondary-color: #09f; /* Needed for 3D background */
+  --hover-color: #3a56d4;
+  --danger-color: #ef4444;
+  --success-color: #10b981;
+  --warning-color: #f59e0b;
+  --info-color: #17a2b8;
+  --header-bg: rgba(255, 255, 255, 0.9);
+  --nav-link-color: #2c3e50;
+  --nav-link-hover: #3498db;
+  --filter-bg: #f8f9fa;
+  --table-header-bg: #f8f9fa;
+  --table-row-hover: #f5f5f5;
+
+  /* convenient aliases */
+  --primary: var(--primary-color);
+  --danger:  var(--danger-color);
+  --success: var(--success-color);
+}
+
+.dark-mode {
+  --bg-color: #1a1a1a;
+  --text-color: #f5f5f5;
+  --card-bg: #2d2d2d;
+  --border-color: #444;
+
+  --primary-color: #3a5e8c;
+  --secondary-color: #2d3748;
+  --hover-color: #5a7de0;
+  --danger-color: #f87171;
+  --success-color: #34d399;
+  --warning-color: #fbbf24;
+  --info-color: #0277bd;
+  --header-bg: rgba(43, 43, 43, 0.9);
+  --nav-link-color: #f5f5f5;
+  --nav-link-hover: #6c8dfa;
+  --filter-bg: #3a3a3a;
+  --table-header-bg: #3a3a3a;
+  --table-row-hover: #333;
+}
+
+/* Global Styles */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Inherited text color */
+label,
+span,
+p,
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-color);
+}
+
+/* UI Blocks */
+.card,
+.modal-content,
+.navbar,
+.filter-option,
+.table-header,
+.setting-option {
+  background-color: var(--card-bg);
+  border-color: var(--border-color);
+  color: var(--text-color);
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+.btn-primary:hover {
+  background-color: var(--hover-color);
+}
+
+/* Navigation */
+.navbar {
+  background: var(--header-bg);
+}
+.nav-links a {
+  color: var(--nav-link-color);
+}
+.nav-links a:hover {
+  color: var(--nav-link-hover);
+}
+
+/* Tables */
+th {
+  background-color: var(--table-header-bg);
+}
+th:hover {
+  background-color: var(--table-row-hover);
+}
+
+/* Forms */
+input,
+select,
+textarea {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border-color: var(--border-color);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #999;
+}
+.dark-mode input::placeholder,
+.dark-mode textarea::placeholder {
+  color: #ccc;
+}
+
+/* Special dark mode */
+.dark-mode .danger-zone {
+  border-left-color: var(--danger-color);
+}
+.dark-mode .feedback-message {
+  background-color: rgba(0, 0, 0, 0.3);
+}

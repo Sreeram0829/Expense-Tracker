@@ -1,0 +1,137 @@
+/* Container */
+.settings-container {
+  max-width: 750px;
+  margin: 2rem auto;
+  padding: 20px;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Headings */
+.settings-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: var(--text-primary);
+  font-size: 1.8rem;
+}
+
+.settings-section {
+  background: var(--card-bg);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--border-color);
+}
+
+.settings-section h3 {
+  margin-top: 0;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 8px;
+  font-size: 1.3rem;
+}
+
+/* Setting Items */
+.setting-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 18px;
+  flex-wrap: wrap;
+}
+
+.setting-item label {
+  font-weight: 500;
+  color: var(--text-primary);
+  flex: 1;
+  margin-bottom: 8px;
+}
+
+.setting-item input[type="text"],
+.setting-item input[type="color"],
+.setting-item input[type="file"],
+.setting-item select {
+  background-color: var(--input-bg);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  padding: 8px 12px;
+  border-radius: 6px;
+  min-width: 180px;
+  margin-left: 10px;
+  transition: box-shadow 0.2s ease;
+}
+
+.setting-item input[type="text"]:focus,
+.setting-item input[type="color"]:focus,
+.setting-item select:focus {
+  outline: none;
+  box-shadow: 0 0 5px var(--primary-color);
+}
+
+.setting-item input[type="checkbox"] {
+  transform: scale(1.2);
+  margin-right: 10px;
+}
+
+.setting-item small {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  margin-top: 6px;
+  display: block;
+}
+
+/* Buttons */
+.btn-export,
+.btn-import,
+.btn-confirm,
+.btn-clear {
+  background-color: var(--primary-color);
+  color: #fff !important;
+  padding: 8px 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-export:hover,
+.btn-import:hover,
+.btn-confirm:hover,
+.btn-clear:hover {
+  background-color: var(--primary-color-hover);
+}
+
+/* Feedback Message */
+.feedback-message {
+  background-color: var(--card-bg);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  padding: 12px;
+  margin-bottom: 15px;
+  text-align: center;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+/* Danger Zone */
+.danger-zone {
+  margin-top: 20px;
+  border-top: 1px solid var(--border-color);
+  padding-top: 15px;
+}
+
+.danger-zone h4 {
+  color: crimson;
+}
+
+.btn-clear {
+  background-color: crimson;
+}
+
+.btn-clear:hover {
+  background-color: darkred;
+}
