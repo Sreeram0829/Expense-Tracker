@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const API_URL = import.meta.env.VITE_REACT_APP_API_URL + '/api/expenses';
+// Read API base URL from environment variables
+const API_URL = `${import.meta.env.VITE_REACT_APP_API_URL}/api/expenses`;
 
 const api = axios.create({
   baseURL: API_URL,
