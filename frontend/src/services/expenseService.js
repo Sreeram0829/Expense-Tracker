@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-// Read API base URL from environment variables
+// ✅ Dynamically use backend URL from environment variables
 const API_URL = `${import.meta.env.VITE_REACT_APP_API_URL}/api/expenses`;
 
 const api = axios.create({

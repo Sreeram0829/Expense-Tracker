@@ -3,8 +3,8 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { jwtDecode } from 'jwt-decode';
 
-// ✅ Set backend server base URL so axios can reach Express
-axios.defaults.baseURL = 'http://localhost:5000';
+// ✅ Dynamically set backend URL using environment variable
+axios.defaults.baseURL = import.meta.env.VITE_REACT_APP_API_URL;
 
 const AuthContext = createContext();
 
@@ -32,10 +32,9 @@ export const AuthProvider = ({ children }) => {
       setAuthToken(res.data.token);
       setUser(jwtDecode(res.data.token));
       navigate('/dashboard');
-      return true;
     } catch (err) {
       console.error('Login error:', err.response?.data);
-      throw err.response?.data?.message || 'Login failed';
+      throw new Error(err.response?.data?.message || 'Login failed');
     }
   };
 
@@ -45,10 +44,9 @@ export const AuthProvider = ({ children }) => {
       setAuthToken(res.data.token);
       setUser(jwtDecode(res.data.token));
       navigate('/dashboard');
-      return true;
     } catch (err) {
       console.error('Registration error:', err.response?.data);
-      throw err.response?.data?.message || 'Registration failed';
+      throw new Error(err.response?.data?.message || 'Registration failed');
     }
   };
 
@@ -62,7 +60,7 @@ export const AuthProvider = ({ children }) => {
   const hasRole = (role) => user?.role === role;
 
   useEffect(() => {
-    const verifyToken = async () => {
+    const verifyToken = () => {
       if (token) {
         try {
           const decoded = jwtDecode(token);
@@ -72,7 +70,7 @@ export const AuthProvider = ({ children }) => {
             setAuthToken(token);
             setUser(decoded);
           }
-        } catch (err) {
+        } catch {
           logout();
         }
       }
@@ -82,8 +80,8 @@ export const AuthProvider = ({ children }) => {
   }, [token]);
 
   return (
-    <AuthContext.Provider value={{ 
-      user, 
+    <AuthContext.Provider value={{
+      user,
       token,
       loading,
       login,
