@@ -12,7 +12,11 @@ const app = express();
 
 // ✅ Updated CORS configuration to fix CORS error
 app.use(cors({
-  origin: ['http://localhost:3000', 'http://localhost:5173'],
+  origin: [
+    'http://localhost:3000',
+    'http://localhost:5173',
+    'https://quantum-expense.netlify.app'  // ✅ Your deployed frontend link
+  ],
   credentials: true
 }));
 
